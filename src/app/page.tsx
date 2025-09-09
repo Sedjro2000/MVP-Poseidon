@@ -50,6 +50,12 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <div className="text-center mb-6 mt-6">
+        <h2 className="text-2xl md:text-3xl text-bold font-heading text-amber-800">Votre aventure commence ici</h2>
+        <p className="text-sm md:text-base text-neutral-600 max-w-3xl mx-auto mt-3">
+          Naviguez sur la carte pour repérer les sites incontournables, <span className="text-primary">activités et trésors cachés</span>.
+        </p>
+      </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
