@@ -40,7 +40,7 @@ module.exports = {
       colors: {
         primary: "#8B5E3C",   // bleu principal #2563eb 
         secondary: "#9333ea", // violet secondaire
-        accent: "##05073C",    // accent (orange) f59e0b 
+        accent: "#05073C",    // accent (orange) f59e0b 
         neutral: {
           50: "#fafafa",
           100: "#f5f5f5",
