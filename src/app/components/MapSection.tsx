@@ -3,6 +3,8 @@
 import { useMemo, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import L from 'leaflet'
+import 'leaflet/dist/leaflet.css';
+
 
 type Place = {
   id: string
