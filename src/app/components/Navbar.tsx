@@ -30,7 +30,7 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="font-semibold text-lg tracking-tight">
-                    <span className="text-brand-600">Trésors</span><span className="text-neutral-800 dark:text-neutral-100">du Bénin</span>
+                    <span className="text-brand-600">Trésors</span><span className="text-neutral-800 dark:text-neutral-100"> du Bénin</span>
                 </Link>
 
                 

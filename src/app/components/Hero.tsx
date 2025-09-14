@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative w-full h-[80vh] flex items-center justify-center">
       {/* Image de fond */}
       <Image
-        src="/assets/images/hero-artisanat.jpg"
+        src="/assets/images/monimagehero.jpg"
         alt="Paysage touristique"
         fill
         priority
@@ -14,7 +14,7 @@ export default function Hero() {
       />
 
       {/* Overlay sombre */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Contenu */}
       <div className="relative z-10 text-center px-6 md:px-12 animate-fade-up">
