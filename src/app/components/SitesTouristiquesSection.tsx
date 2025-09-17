@@ -23,7 +23,7 @@ export default function SitesTouristiquesSection() {
   const [activeCategory, setActiveCategory] = useState("Culturel");
 
   // Récupération de tous les sites depuis Convex
-  const sites = useQuery(api.sites.getAllSites) as Site[] | undefined;
+  const sites = useQuery(api.functions.sites.getAllSites) as Site[] | undefined;
 
   // 🔹 Log des sites bruts
   console.log("Sites récupérés depuis Convex :", sites);
