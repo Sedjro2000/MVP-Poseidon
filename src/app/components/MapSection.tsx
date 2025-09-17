@@ -137,7 +137,7 @@ export default function MapSection() {
         </p>
       </div>
 
-      {/* Barre de filtres (pills) */}
+      {/* Barre de filtres */}
       <div className="lg:absolute lg:-top-3 lg:left-1/2 lg:-translate-x-1/2 flex justify-center mb-6">
         <div className="inline-flex items-center gap-3 bg-white rounded-full px-3 py-2 shadow-card border border-black/5">
           
