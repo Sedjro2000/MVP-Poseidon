@@ -1,5 +1,5 @@
 import BoutiqueCard from "../components/BoutiqueCard";
-import Link from "next/link";
+
 const boutiques = [
   {
     id: 1,

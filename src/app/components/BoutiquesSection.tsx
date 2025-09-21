@@ -1,4 +1,3 @@
-
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,10 +48,10 @@ export default function BoutiquesSection() {
         <h2 className="text-2xl md:text-3xl font-bold text-brown-600 mb-4">
           Boutiques à ne pas manquer
         </h2>
-        
+
         <p className="text-base lg:text-lg text-gray-600 max-w-3xl mx-auto mb-10">
-          Découvrez nos boutiques artisanales : plongez dans l'univers de
-          l'artisanat béninois, reflet de notre histoire et de notre créativité.
+          Découvrez nos boutiques artisanales : plongez dans l&apos;univers de
+          l&apos;artisanat béninois, reflet de notre histoire et de notre créativité.
           Chaque pièce est un trésor unique qui célèbre nos racines et met en
           lumière le savoir-faire de nos artisans.
         </p>

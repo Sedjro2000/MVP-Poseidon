@@ -1,21 +1,9 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 
-interface Site {
-  _id: string;
-  name: string;
-  region: string;
-  theme: string;
-  description: string;
-  photo?: string;
-  horaires?: string;
-  gps: { lat: number; lng: number };
-  searchText?: string;
-}
+
 
 const places = [
   {
@@ -24,7 +12,7 @@ const places = [
     category: "Culturel",
     title: "Ganvié, la cité lacustre",
     slug: "ganvie-cite-lacustre",
-    description: "Surnommée la « Venise de l'Afrique », Ganvié est une ville sur pilotis construite au XVIIe siècle au milieu du lac Nokoué par le peuple Tofinu.",
+    description: "Surnommée la « Venise de l&apos;Afrique », Ganvié est une ville sur pilotis construite au XVIIe siècle au milieu du lac Nokoué par le peuple Tofinu.",
     duration: "2 jours",
     distance: "15km",
     image: "/assets/sites/ganvie_benin_village_lacustre.jpg"
@@ -46,7 +34,7 @@ const places = [
     category: "Culturel",
     title: "Musée de la Fondation Zinsou",
     slug: "musee-de-la-fondation-zinsou",
-    description: "Un centre d'art contemporain et de la culture béninoise à Cotonou, présentant des expositions d'artistes africains et internationaux.",
+    description: "Un centre d&apos;art contemporain et de la culture béninoise à Cotonou, présentant des expositions d&apos;artistes africains et internationaux.",
     duration: "2h",
     distance: "15km",
     image: "/assets/sites/musee_zinsou.jpg"
@@ -57,7 +45,7 @@ const places = [
     category: "Culturel",
     title: "La Porte du Non-Retour",
     slug: "la-porte-du-non-retour",
-    description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l'Amérique.",
+    description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l&apos;Amérique.",
     duration: "1h",
     distance: "40km",
     image: "/assets/sites/door_no_return.jpeg"
@@ -66,9 +54,9 @@ const places = [
     id: 5,
     href: 'musee-historique-abomey',
     category: "Culturel",
-    title: "Musée Historique d'Abomey",
+    title: "Musée Historique d&apos;Abomey",
     slug: "musee-historique-abomey",
-    description: "Installé dans l'ancien Palais Royal d'Abomey, ce musée retrace l'histoire du royaume du Dahomey à travers ses objets, trônes et reliques royales.",
+    description: "Installé dans l&apos;ancien Palais Royal d&apos;Abomey, ce musée retrace l&apos;histoire du royaume du Dahomey à travers ses objets, trônes et reliques royales.",
     duration: "2/3 heures.",
     distance: "140km ",
     image: "/assets/sites/musee_historique.jpeg"
@@ -79,7 +67,7 @@ const places = [
     category: "Culturel",
     title: "Tata Somba",
     slug: "tata-somba",
-    description: "Des habitations traditionnelles fortifiées dans le nord du Bénin (région de l'Atacora), inscrites au patrimoine mondial de l'UNESCO pour leur architecture unique.",
+    description: "Des habitations traditionnelles fortifiées dans le nord du Bénin (région de l&apos;Atacora), inscrites au patrimoine mondial de l&apos;UNESCO pour leur architecture unique.",
     duration: "Variable",
     distance: "500km",
     image: "/assets/sites/default-site.jpg"
@@ -148,7 +136,7 @@ export default function SitesTouristiquesSection() {
         </h2>
         <p className="text-center text-gray-600 font-sans max-w-2xl mx-auto mb-8">
           Des monuments historiques aux paysages naturels, partez à la
-          découverte des sites qui font l'âme de nos villes.
+          découverte des sites qui font l&apos;âme de nos villes.
         </p>
 
         {/* Tabs */}

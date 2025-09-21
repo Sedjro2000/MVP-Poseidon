@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body
-        className={`${lusitana.className} antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100`}
+        className={`${lusitana.className} antialiased bg-white text-neutral-900  `}
       >
         <ConvexClientProvider>
           <Navbar />

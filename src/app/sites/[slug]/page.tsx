@@ -13,7 +13,7 @@ const site = {
     category: "Site historique",
     location: "Ouidah",
     description: 
-        "La Porte du Non-Retour est un monument emblématique situé à Ouidah, au Bénin. Elle a été construite en 1995 et représente le point final du parcours des esclaves, qui étaient contraints de quitter leur terre natale sans espoir de retour. L'arche monumentale se dresse sur la plage où les navires négriers partaient vers les Amériques. Le site est un lieu de recueillement et de mémoire. Il est ouvert au public et symbolise le souvenir de l'esclavage et la résistance du peuple africain. Bien que le site soit une structure en plein air et accessible en permanence, le Musée d'Histoire de Ouidah (souvent visité en même temps) a des horaires précis.",
+        "La Porte du Non-Retour est un monument emblématique situé à Ouidah, au Bénin. Elle a été construite en 1995 et représente le point final du parcours des esclaves, qui étaient contraints de quitter leur terre natale sans espoir de retour. L&apos;arche monumentale se dresse sur la plage où les navires négriers partaient vers les Amériques. Le site est un lieu de recueillement et de mémoire. Il est ouvert au public et symbolise le souvenir de l&apos;esclavage et la résistance du peuple africain. Bien que le site soit une structure en plein air et accessible en permanence, le Musée d&apos;Histoire de Ouidah (souvent visité en même temps) a des horaires précis.",
     price: "Accès libre avec des guides locaux",
     horaires: "Lundi - Dimanche : 9h00 - 18h00",
     contact: {
@@ -35,7 +35,7 @@ const proximites = [
         href: 'ganvie-la-cite-lacustre',
         category: "Culturel",
         title: "Ganvié, la cité lacustre",
-        description: "Surnommée la « Venise de l'Afrique », Ganvié est une ville sur pilotis construite au XVIIe siècle au milieu du lac Nokoué par le peuple Tofinu.",
+        description: "Surnommée la Venise de l&apos;Afrique , Ganvié est une ville sur pilotis construite au XVIIe siècle au milieu du lac Nokoué par le peuple Tofinu.",
         duration: "2j",
         distance: "15km",
         image: "/assets/sites/ganvie_benin_village_lacustre.jpg"
@@ -55,7 +55,7 @@ const proximites = [
         href: 'musee-fondation-zinsou',
         category: "Culturel",
         title: "Musée de la Fondation Zinsou",
-        description: "Un centre d'art contemporain et de la culture béninoise à Cotonou, présentant des expositions d'artistes africains et internationaux.",
+        description: "Un centre d&apos;art contemporain et de la culture béninoise à Cotonou, présentant des expositions d&apos;artistes africains et internationaux.",
         duration: "2h",
         distance: "15km",
         image: "/assets/sites/musee_zinsou.jpg"
@@ -65,7 +65,7 @@ const proximites = [
         href: 'la-porte-du-non-retour',
         category: "Culturel",
         title: "La Porte du Non-Retour",
-        description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l'Amérique.",
+        description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l&apos;Amérique.",
         duration: "1h",
         distance: "40km",
         image: "/assets/sites/door_no_return.jpeg"
@@ -75,7 +75,8 @@ const proximites = [
 
 
 export default function SiteDetailPage() {
-    const [L, setL] = useState<any>(null);
+   const [L, setL] = useState<typeof import("leaflet") | null>(null);
+
 
   useEffect(() => {
     (async () => {
@@ -141,25 +142,32 @@ export default function SiteDetailPage() {
 
             {/* Galerie */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
-                <img
-                    src={site.images[0]}
-                    alt="textile made in Benin"
-                    className="w-full h-80 object-cover rounded-xl md:col-span-2"
-                    loading='lazy'
-                />
+               <Image
+    src={site.images[0]}
+    alt="textile made in Benin"
+    width={600}
+    height={400}
+    className="w-full h-80 object-cover rounded-xl md:col-span-2"
+    loading="lazy"
+  />
                 <div className="grid grid-cols-2 gap-4 px-4 place-items-end lg:border-l-[3px] lg:border-[#e7e6e6db]">
-                    <img
-                        src={site.images[1]}
-                        alt="model made in Benin"
-                        className="w-full h-36 object-cover rounded-xl"
-                        loading='lazy'
-                    />
-                    <img
-                        src={site.images[2]}
-                        alt="textile scene made in Benin"
-                        className="w-full h-36 object-cover rounded-xl"
-                        loading='lazy'
-                    />
+                 <Image
+      src={site.images[1]}
+      alt="model made in Benin"
+      width={300}
+      height={200}
+      className="w-full h-36 object-cover rounded-xl"
+      loading="lazy"
+    />
+    <Image
+      src={site.images[2]}
+      alt="textile scene made in Benin"
+      width={300}
+      height={200}
+      className="w-full h-36 object-cover rounded-xl"
+      loading="lazy"
+    />
+
                 </div>
                 <button className="absolute top-6 right-[15%] bg-brown-600 hover:bg-brown-700 text-white p-4 text-base rounded-xl ">
                     Galeries photos
@@ -175,18 +183,18 @@ export default function SiteDetailPage() {
                     <h3 className="font-bold text-primary">Services proposés</h3>
                     <ul className="list-disc list-inside text-accent">
                         <li><span className="font-semibold">Visites guidées</span> : Des guides locaux et des historiens sont souvent présents sur le site pour offrir 
-                            des visites détaillées. Ils expliquent l'histoire du lieu, la signification de la porte et le
+                            des visites détaillées. Ils expliquent l&apos;histoire du lieu, la signification de la porte et le
                              contexte de la traite négrière. Ce sont des services payants qui ne sont pas inclus dans 
-                             l'accès au site.
+                             l&apos;accès au site.
                         </li>
                         <li>
-                            <span className="font-semibold">Boutique d'artisanat</span> : Autour du site et le long de la "route des esclaves" à Ouidah, vous trouverez 
-                            des vendeurs et des petites boutiques qui proposent des souvenirs, des objets d'artisanat local et
-                             d'autres produits.
+                            <span className="font-semibold">Boutique d&apos;artisanat</span> : Autour du site et le long de la route des esclaves à Ouidah, vous trouverez 
+                            des vendeurs et des petites boutiques qui proposent des souvenirs, des objets d&apos;artisanat local et
+                             d&apos;autres produits.
                         </li>
                         <li>
                             <span className="font-semibold">Restauration</span> : Des stands de nourriture et de petites échoppes sont disponibles près de la plage pour 
-                            acheter des rafraîchissements. Il n'y a pas de restaurant sur le site même.
+                            acheter des rafraîchissements. Il n&apos;y a pas de restaurant sur le site même.
                         </li>
                     </ul>
                 </div>
@@ -201,7 +209,7 @@ export default function SiteDetailPage() {
                     </div>
                     <div className="mb-3 text-accent">
                         <p className="mb-2">
-                            <strong className="text-brown-500">Horaires d'ouverture :</strong>
+                            <strong className="text-brown-500">Horaires d&apos;ouverture :</strong>
                         </p>
                         <p className="mb-2">{site.horaires}</p>
                     </div>

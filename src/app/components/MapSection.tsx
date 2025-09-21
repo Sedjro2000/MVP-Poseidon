@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css';
-import { ConvexProvider, ConvexReactClient } from "convex/react";
 
 type Place = {
   id: string
