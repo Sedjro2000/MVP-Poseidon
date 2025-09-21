@@ -38,7 +38,7 @@ const places = [
     description: "Point culminant du Bénin",
     duration: "2 jours",
     distance: "30km",
-    image: "/assets/sites/ouidah-temple-python-3.jpg",
+    image: "/assets/sites/temple-pythons.jpg",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const places = [
     description: "Un centre d'art contemporain et de la culture béninoise à Cotonou, présentant des expositions d'artistes africains et internationaux.",
     duration: "2h",
     distance: "15km",
-    image: "/assets/sites/default-site.jpg"
+    image: "/assets/sites/musee_zinsou.jpg"
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ const places = [
     description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l'Amérique.",
     duration: "1h",
     distance: "40km",
-    image: "/assets/sites/default-site.jpg"
+    image: "/assets/sites/door_no_return.jpeg"
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ const places = [
     description: "Installé dans l'ancien Palais Royal d'Abomey, ce musée retrace l'histoire du royaume du Dahomey à travers ses objets, trônes et reliques royales.",
     duration: "2/3 heures.",
     distance: "140km ",
-    image: "/assets/sites/default-site.jpg"
+    image: "/assets/sites/musee_historique.jpeg"
   },
   {
     id: 6,
@@ -192,6 +192,7 @@ export default function SitesTouristiquesSection() {
                     alt={place.title}
                     fill
                     className="object-cover rounded-xl p-2"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-4">
