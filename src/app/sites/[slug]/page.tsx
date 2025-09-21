@@ -127,7 +127,7 @@ export default function SiteDetailPage() {
                 </ol>
             </nav>
             <h1 className="text-2xl md:text-3xl font-bold text-brown-500">
-                Boutique “{site.name}”
+                Site “{site.name}”
             </h1>
             <div className="flex items-center gap-4 text-base text-gray-500">
                 <span><span className="text-primary">Type de site</span> : <span className="text-accent">{site.category}</span></span>
@@ -172,7 +172,7 @@ export default function SiteDetailPage() {
                     <h2 className="text-xl font-semibold mb-3 text-primary">Description</h2>
                     <p className="text-accent mb-2">{site.description}</p>
 
-                    <h3 className="font-bold text-primary">Produits proposés</h3>
+                    <h3 className="font-bold text-primary">Services proposés</h3>
                     <ul className="list-disc list-inside text-accent">
                         <li><span className="font-semibold">Visites guidées</span> : Des guides locaux et des historiens sont souvent présents sur le site pour offrir 
                             des visites détaillées. Ils expliquent l'histoire du lieu, la signification de la porte et le
@@ -226,7 +226,7 @@ export default function SiteDetailPage() {
             <section>
                 <div className="heading mb-6">
                     <h2 className="text-xl text-brown-500 font-bold mb-6">
-                        Voir cette boutique sur la carte
+                        Voir ce site sur la carte
                     </h2>
                 </div>
                 <div className="w-full rounded-xl overflow-hidden shadow-card border border-black/5">

@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { lusitana } from "./font";
 import Navbar from "./components/Navbar";
 import ConvexClientProvider from "./providers/ConvexClientProvider";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "MVP Poseidon - Tourisme au Bénin",
@@ -26,6 +27,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
+          <Footer />
         </ConvexClientProvider>
       </body>
     </html>
