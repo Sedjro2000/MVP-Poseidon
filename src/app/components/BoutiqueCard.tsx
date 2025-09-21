@@ -1,10 +1,13 @@
 'use client';
 import { useState } from "react";
 import { Heart } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Boutique {
     id: number;
     name: string;
+    slug: string,
     image: string;
     distance: string;
     description: string;
@@ -31,41 +34,42 @@ export default function BoutiqueCard({ boutique } : BoutiqueCardProps) {
       </button>
 
       {/* Image boutique */}
-      <img
+      <Image
+        width={500}
+        height={300}
         src={boutique.image}
         alt={boutique.name}
         className="w-32 h-32 object-contain"
       />
 
       {/* Détails */}
-      <div className="flex-1 border-r-[#E7E6E6] ">
+      <div className="flex-1 ">
         <p className="text-sm text-gray-500">Ville</p>
         <h3 className="text-lg font-semibold">{boutique.name}</h3>
         <p className="text-sm text-gray-500 mb-3">{boutique.distance} km</p>
         <p className="text-sm text-gray-600">{boutique.description}</p>
 
-        {/* Boutons */}
       </div>
-        <div className="flex flex-col gap-3 mt-4">
-          <button
-            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
-              liked
-                ? "bg-red-100 text-red-600 border border-red-400"
-                : "bg-red-500 text-white"
-            }`}
-            onClick={() => setLiked(!liked)}
-          >
-            {liked ? "Retirer des favoris" : "Ajouter aux favoris"}
-          </button>
+      <div className="flex flex-col gap-3 mt-4 lg:px-3 lg:border-l-[3px] lg:border-[#e7e6e6db]">
+        <button
+          className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+            liked
+              ? "bg-red-100 text-red-600 border border-red-400"
+              : "bg-red-500 text-white"
+          }`}
+          onClick={() => setLiked(!liked)}
+        >
+          {liked ? "Retirer des favoris" : "Ajouter aux favoris"}
+        </button>
 
-          <button className="px-4 py-2 rounded-lg border text-sm font-medium whitespace-nowrap">
-            Ajouter à un itinéraire
-          </button>
+        <button className="px-4 py-2 rounded-lg border text-sm font-medium whitespace-nowrap">
+          Ajouter à un itinéraire
+        </button>
 
-          <button className="px-4 py-2 rounded-lg bg-brown-600 text-white text-sm font-medium whitespace-nowrap">
-            Voir détails
-          </button>
-        </div>
+        <Link href={`boutiques/${boutique.slug}`} className="px-4 py-2 rounded-lg bg-brown-600 text-white text-center text-sm hover:border-brown-500 hover:bg-brown-50 font-medium whitespace-nowrap transition">
+          Voir détails
+        </Link>
+      </div>
     </div>
   );
 }

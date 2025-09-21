@@ -1,9 +1,10 @@
 import BoutiqueCard from "../components/BoutiqueCard";
-
+import Link from "next/link";
 const boutiques = [
   {
     id: 1,
     name: "Atelier tissage d'Abomey",
+    slug: "atelier-tissage-abomey",
     image: "/assets/boutiques/garment.png",
     distance: "À 45.5km",
     description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
@@ -11,28 +12,32 @@ const boutiques = [
   {
     id: 2,
     name: "Atelier tissage d'Abomey",
-    image: "/assets/boutiques/garment.png",
+    slug: "atelier-tissage",
+    image: "/assets/boutiques/people_textile.png",
     distance: "À 45.5km",
     description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
   },
   {
     id: 3,
     name: "Atelier tissage d'Abomey",
-    image: "/assets/boutiques/garment.png",
+    slug: "atelier-tissage-abomey",
+    image: "/assets/boutiques/textile_two.jpeg",
     distance: "À 45.5km",
     description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
   },
   {
     id: 4,
     name: "Atelier tissage d'Abomey",
-    image: "/assets/boutiques/garment.png",
+    slug: "atelier-tissage-abomey",
+    image: "/assets/boutiques/poterie_two.jpeg",
     distance: "À 45.5km",
     description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
   },
   {
     id: 5,
     name: "Atelier tissage d'Abomey",
-    image: "/assets/boutiques/garment.png",
+    slug: "atelier-tissage-abomey",
+    image: "/assets/boutiques/textile_three.jpeg",
     distance: "À 45.5km",
     description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
   },
@@ -55,7 +60,7 @@ export default function Boutiques() {
                 <li aria-current="page">
                     <div className="flex items-center">
                         <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
                         </svg>
                         <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Boutique Artisanal</span>
                     </div>
