@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <body
         className={`${lusitana.className} antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100`}
       >

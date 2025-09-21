@@ -26,7 +26,7 @@ export default function Hero() {
           
         </p>
         <a
-          href="#destinations"
+          href="#leaflet"
           className="inline-block w-[200px] py-3 text-lg font-medium bg-opacity-0 text-white rounded-lg border-2 border-solid border-white shadow-lg hover:bg-secondary hover:text-white transition duration-300"
         >
           Explorer maintenant
