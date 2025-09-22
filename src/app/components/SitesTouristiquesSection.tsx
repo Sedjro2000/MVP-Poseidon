@@ -19,6 +19,17 @@ const places = [
   },
   {
     id: 2,
+    href: "place-de-l-amazone",
+    category: "Culturel",
+    title: "Place de l'Amazone",
+    slug: "place-de-l-amazone",
+    description: "Une place emblématique à Cotonou, dominée par la statue monumentale de l&apos;Amazone, symbolisant la bravoure des femmes guerrières du Dahomey.",
+    duration: "1/2h",
+    distance: "2025,8 m",
+    image: "/assets/sites/place_amazone.jpeg"
+  },
+  {
+    id: 3,
     href: 'temple-des-pythons',
     category: "Naturel",
     title: "Temple des pythons",
@@ -29,7 +40,7 @@ const places = [
     image: "/assets/sites/temple-pythons.jpg",
   },
   {
-    id: 3,
+    id: 4,
     href: 'musee-fondation-zinsou',
     category: "Culturel",
     title: "Musée de la Fondation Zinsou",
@@ -40,7 +51,7 @@ const places = [
     image: "/assets/sites/musee_zinsou.jpg"
   },
   {
-    id: 4,
+    id: 5,
     href: 'la-porte-du-non-retour',
     category: "Culturel",
     title: "La Porte du Non-Retour",
@@ -51,7 +62,7 @@ const places = [
     image: "/assets/sites/door_no_return.jpeg"
   },
   {
-    id: 5,
+    id: 6,
     href: 'musee-historique-abomey',
     category: "Culturel",
     title: "Musée Historique d&apos;Abomey",
@@ -62,7 +73,7 @@ const places = [
     image: "/assets/sites/musee_historique.jpeg"
   },
   {
-    id: 6,
+    id: 7,
     href: 'tata-somba',
     category: "Culturel",
     title: "Tata Somba",
@@ -140,7 +151,7 @@ export default function SitesTouristiquesSection() {
         </p>
 
         {/* Tabs */}
-        <div className="flex justify-center space-x-4 mb-10">
+        <div className="flex justify-center lg:justify-end space-x-4 mb-10">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -148,7 +159,7 @@ export default function SitesTouristiquesSection() {
                 console.log("Changement de catégorie :", cat);
                 setActiveCategory(cat);
               }}
-              className={`px-4 py-2 rounded-full text-base font-bold font-sans ${
+              className={`px-4 py-2 rounded-full text-sm font-bold font-sans ${
                 activeCategory === cat
                   ? "bg-white border-brown-600 text-primary"
                   : "text-gray-600 hover:text-brown-600"

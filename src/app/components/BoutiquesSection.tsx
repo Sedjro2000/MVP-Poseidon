@@ -6,37 +6,37 @@ const categories = [
   {
     id: 1,
     title: "Bijoux & accessoires",
-    image: "/assets/boutiques/bijoux.png",
+    image: "/assets/boutiques/bijoux.jpeg",
     href: "/categories/bijoux",
   },
   {
     id: 2,
     title: "Textiles & mode",
-    image: "/assets/boutiques/textile.png",
+    image: "/assets/boutiques/textile_two.jpeg",
     href: "/categories/textiles",
   },
   {
     id: 3,
     title: "Souvenirs & objets décoratifs",
-    image: "/assets/boutiques/souvenir.png",
+    image: "/assets/boutiques/souvenir.jpeg",
     href: "/categories/souvenirs",
   },
   {
     id: 4,
     title: "Vannerie & objets en fibres",
-    image: "/assets/boutiques/vannerie.png",
-    href: "/assets/boutiques/vannerie.png",
+    image: "/assets/boutiques/vannerie.jpg",
+    href: "/categories/vannerie",
   },
   {
     id: 5,
     title: "Poterie",
-    image: "/assets/boutiques/poterie.svg",
+    image: "/assets/boutiques/poterie.jpeg",
     href: "/categories/poterie",
   },
   {
     id: 6,
     title: "Peinture & art visuel",
-    image: "/assets/boutiques/peinture.png",
+    image: "/assets/boutiques/peinture.jpg",
     href: "/categories/peinture",
   },
 ];
@@ -80,7 +80,7 @@ export default function BoutiquesSection() {
                 height={300}
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 p-6 bg-black/15 flex items-end justify-start">
+              <div className="absolute inset-0 p-6 bg-black/40 flex items-end justify-start">
                 <span className="text-white font-medium text-lg">
                   {cat.title}
                 </span>
