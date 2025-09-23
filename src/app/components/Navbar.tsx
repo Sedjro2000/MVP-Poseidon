@@ -7,8 +7,8 @@ import MobileDrawer from "./MobileDrawer";
 
 const navItems = [
     { href: '/', label: 'Accueil' },
-    { href: '/site-touristiques', label: 'Sites touristiques' },
-    { href: '/artisanat', label: 'Artisanat et boutiques' },
+    { href: '/sites', label: 'Sites touristiques' },
+    { href: '/boutiques', label: 'Artisanat et boutiques' },
     { href: '/ville', label: 'Villes' },
 ]
 

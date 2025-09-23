@@ -4,6 +4,21 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+interface Site {
+    id: number;
+    href: string;
+    category: string,
+    title: string;
+    slug: string;
+    description: string;
+    duration: string;
+    distance: string;
+    image: string;
+}
+
+interface SiteCardProps {
+    site: Site;
+}
 interface Boutique {
     id: number;
     name: string;
@@ -16,7 +31,7 @@ interface Boutique {
 interface BoutiqueCardProps {
     boutique: Boutique;
 }
-export default function BoutiqueCard({ boutique } : BoutiqueCardProps) {
+export default function SiteCard({ site } : SiteCardProps) {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -33,21 +48,21 @@ export default function BoutiqueCard({ boutique } : BoutiqueCardProps) {
         />
       </button>
 
-      {/* Image boutique */}
+      {/* Image site */}
       <Image
         width={500}
         height={300}
-        src={boutique.image}
-        alt={boutique.name}
+        src={site.image}
+        alt={site.title}
         className="w-32 h-32 object-cover rounded-xl"
       />
 
       {/* Détails */}
       <div className="flex-1 ">
         <p className="text-sm text-gray-500">Ville</p>
-        <h3 className="text-lg font-semibold">{boutique.name}</h3>
-        <p className="text-sm text-gray-500 mb-3">{boutique.distance}</p>
-        <p className="text-sm text-gray-600">{boutique.description}</p>
+        <h3 className="text-lg font-semibold">{site.title}</h3>
+        <p className="text-sm text-gray-500 mb-3">{site.distance}</p>
+        <p className="text-sm text-gray-600">{site.description}</p>
 
       </div>
       <div className="flex flex-col gap-3 mt-4 lg:px-3 lg:border-l-[3px] lg:border-[#e7e6e6db]">
@@ -66,7 +81,7 @@ export default function BoutiqueCard({ boutique } : BoutiqueCardProps) {
           Ajouter à un itinéraire
         </button>
 
-        <Link href={`boutiques/${boutique.slug}`} className="px-4 py-2 rounded-lg bg-brown-600 text-white text-center text-sm hover:border-brown-500 hover:bg-brown-50 font-medium whitespace-nowrap transition">
+        <Link href={`sites/${site.slug}`} className="px-4 py-2 rounded-lg bg-brown-600 text-white text-center text-sm hover:border-brown-500 hover:bg-brown-50 font-medium whitespace-nowrap transition">
           Voir détails
         </Link>
       </div>
