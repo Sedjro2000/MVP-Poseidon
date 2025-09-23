@@ -1,21 +1,15 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-/* Optionnel : styles globaux légers */
-/* :root {
-color-scheme: light dark;
-} */
-
-/* Import des polices Google Fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap'); */
 
 /* Styles globaux */
 body {
   @apply bg-neutral-50 text-neutral-900 font-sans;
 }
-
+ html{
+  color-scheme: light;
+ }
 /* Titres */
 h1, h2, h3, h4, h5, h6 {
   @apply font-heading text-neutral-900;

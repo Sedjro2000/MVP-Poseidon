@@ -7,8 +7,8 @@ import MobileDrawer from "./MobileDrawer";
 
 const navItems = [
     { href: '/', label: 'Accueil' },
-    { href: '/site-touristiques', label: 'Sites touristiques' },
-    { href: '/artisanat', label: 'Artisanat et boutiques' },
+    { href: '/sites', label: 'Sites touristiques' },
+    { href: '/boutiques', label: 'Artisanat et boutiques' },
     { href: '/ville', label: 'Villes' },
 ]
 
@@ -26,11 +26,11 @@ export default function Navbar() {
     }, [])
 
     return (
-        <header className="sticky shadow-nav bg-wite top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 dark:bg-neutral-900/80 border-b border-black/5 dark-white/10 ">
+        <header className="sticky shadow-nav bg-white top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 dark:bg-neutral-900/80 border-b border-black/5 dark-white/10 ">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="font-semibold text-lg tracking-tight">
-                    <span className="text-brand-600">Trésors</span><span className="text-neutral-800 dark:text-neutral-100">du Bénin</span>
+                    <span className="text-brand-600">Trésors</span><span className="text-neutral-800 dark:text-neutral-100"> du Bénin</span>
                 </Link>
 
                 
