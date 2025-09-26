@@ -1,53 +1,68 @@
-import BoutiqueCard from "../components/BoutiqueCard";
+import SiteCard from "../components/SiteCard";
 import Link from "next/link";
 
-const boutiques = [
-  {
+const sites = [
+   {
     id: 1,
-    name: "Atelier tissage d'Abomey",
-    slug: "atelier-tissage-abomey",
-    image: "/assets/boutiques/garment.png",
-    distance: "À 45.5km",
-    description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
+    href: 'ganvie-la-cite-lacustre',
+    category: "Culturel",
+    title: "Ganvié, la cité lacustre",
+    slug: "ganvie-cite-lacustre",
+    description: "Surnommée la « Venise de l&apos;Afrique », Ganvié est une ville sur pilotis construite au XVIIe siècle au milieu du lac Nokoué par le peuple Tofinu.",
+    duration: "2 jours",
+    distance: "15km",
+    image: "/assets/sites/ganvie_benin_village_lacustre.jpg"
   },
   {
     id: 2,
-    name: "Atelier tissage d'Abomey",
-    slug: "atelier-tissage",
-    image: "/assets/boutiques/people_textile.png",
-    distance: "À 45.5km",
-    description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
+    href: "place-de-l-amazone",
+    category: "Culturel",
+    title: "Place de l'Amazone",
+    slug: "place-de-l-amazone",
+    description: "Une place emblématique à Cotonou, dominée par la statue monumentale de l&apos;Amazone, symbolisant la bravoure des femmes guerrières du Dahomey.",
+    duration: "1/2h",
+    distance: "2025,8 m",
+    image: "/assets/sites/place_amazone.jpeg"
   },
   {
     id: 3,
-    name: "Atelier tissage d'Abomey",
-    slug: "atelier-tissage-abomey",
-    image: "/assets/boutiques/textile_two.jpeg",
-    distance: "À 45.5km",
-    description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
+    href: 'temple-des-pythons',
+    category: "Naturel",
+    title: "Temple des pythons",
+    slug: "temple-des-pythons",
+    description: "Point culminant du Bénin",
+    duration: "2 jours",
+    distance: "30km",
+    image: "/assets/sites/temple-pythons.jpg",
   },
   {
     id: 4,
-    name: "Atelier tissage d'Abomey",
-    slug: "atelier-tissage-abomey",
-    image: "/assets/boutiques/poterie_two.jpeg",
-    distance: "À 45.5km",
-    description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
+    href: 'musee-fondation-zinsou',
+    category: "Culturel",
+    title: "Musée de la Fondation Zinsou",
+    slug: "musee-de-la-fondation-zinsou",
+    description: "Un centre d&apos;art contemporain et de la culture béninoise à Cotonou, présentant des expositions d&apos;artistes africains et internationaux.",
+    duration: "2h",
+    distance: "15km",
+    image: "/assets/sites/musee_zinsou.jpg"
   },
   {
     id: 5,
-    name: "Atelier tissage d'Abomey",
-    slug: "atelier-tissage-abomey",
-    image: "/assets/boutiques/textile_three.jpeg",
-    distance: "À 45.5km",
-    description: "Plongez au coeur du savoir-faire béninois avec l'atelier Tissage d'Abomey. Depuis plusieurs générations, cette boutique familiale perpétue la tradition du pagne tissé à la main."
+    href: 'la-porte-du-non-retour',
+    category: "Culturel",
+    title: "La Porte du Non-Retour",
+    slug: "la-porte-du-non-retour",
+    description: "Située à Ouidah, cette arche monumentale commémore le lieu où les esclaves étaient embarqués pour être déportés vers l&apos;Amérique.",
+    duration: "1h",
+    distance: "40km",
+    image: "/assets/sites/door_no_return.jpeg"
   },
 
 ];
 
 export default function Boutiques() {
   return (
-    <div className="container mx-auto px-6 py-10">
+    <div className="container max-w-6xl mx-auto px-6 py-10">
         <nav className="flex mb-3" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li className="inline-flex items-center">
@@ -63,44 +78,41 @@ export default function Boutiques() {
                         <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
                         </svg>
-                        <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Boutique Artisanal</span>
+                        <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Sites touristiques</span>
                     </div>
                 </li>
             </ol>
         </nav>
 
       <h1 className="text-2xl text-accent font-bold mb-8">
-        Voir les boutiques artisanales
+        Voir les sites touristiques
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Sidebar gauche */}
-        <aside className="col-span-2 border rounded-xl p-5 bg-white shadow-sm ">
+        <aside className="col-span-2 border lg:max-h-[21%] rounded-xl p-5 bg-white shadow-sm ">
           <h2 className="text-sm font-semibold mb-3">Vos préférences</h2>
           <ul className="space-y-2 text-sm text-gray-700">
             <li>
-              <input type="checkbox" /> Bijoux & accessoires
+              <input type="checkbox" /> Historique
             </li>
             <li>
-              <input type="checkbox" /> Textile & mode
+              <input type="checkbox" /> Culturel
             </li>
             <li>
-              <input type="checkbox" /> Poterie & céramique
+              <input type="checkbox" /> Naturel
             </li>
             <li>
-              <input type="checkbox" /> Ébénisterie & rotin
-            </li>
-            <li>
-              <input type="checkbox" /> Souvenirs & objets décoratifs
+              <input type="checkbox" /> Réligieux
             </li>
           </ul>
         </aside>
 
         {/* Liste boutiques */}
         <main className="col-span-9 space-y-6">
-            <p className="font-base text-accent"> {`${boutiques.length} résultats`} </p>
-          {boutiques.map((boutique_item) => (
-            <BoutiqueCard key={boutique_item.id} boutique={boutique_item} />
+            <p className="font-base text-accent"> {`${sites.length} résultats`} </p>
+          {sites.map((site_item) => (
+            <SiteCard key={site_item.id} site={site_item} />
           ))}
 
           {/* Pagination */}

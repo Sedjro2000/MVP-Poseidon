@@ -147,7 +147,7 @@ export default function BoutiqueDetailPage() {
         <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li className="inline-flex items-center">
             <Link
-              href="#"
+              href="/"
               className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-secondary dark:text-gray-400 dark:hover:text-white"
             >
               <svg className="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -161,7 +161,7 @@ export default function BoutiqueDetailPage() {
               <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
               </svg>
-              <Link href="#" className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+              <Link href="/boutiques" className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
                 Boutiques
               </Link>
             </div>
@@ -183,15 +183,15 @@ export default function BoutiqueDetailPage() {
       </h1>
 
       {/* Infos */}
-      <div className="flex items-center gap-4 text-base text-gray-500">
+      <div className="flex items-center flex-wrap gap-4 text-base text-gray-500">
         <span>
-          <span className="text-primary">Catégorie artisanat</span> :{" "}
-          <span className="text-accent">{boutique.category}</span>
+          <span className="text-primary">Catégorie artisanat</span> :
+          <span className="text-accent"> {boutique.category} </span>
         </span>
-        <span>•</span>
+        <span className='hidden md:block'>•</span>
         <span>
-          <span className="text-primary">Localisation :</span>{" "}
-          <span className="text-accent">{boutique.location}</span>
+          <span className="text-primary">Localisation :</span>
+          <span className="text-accent"> {boutique.location} </span>
         </span>
         <span className="ml-auto flex gap-4 text-accent">
           <button className="hover:underline">Partager</button>

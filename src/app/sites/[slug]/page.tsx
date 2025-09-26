@@ -1,6 +1,6 @@
 'use client';
 
-import {  MapContainer, TileLayer, Marker, Popup, Tooltip } from '@/app/lib/leafletComponents';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from '@/app/lib/leafletComponents';
 import { useState, useEffect } from 'react';
 import "leaflet/dist/leaflet.css";
 import Image from "next/image";
@@ -12,7 +12,7 @@ const site = {
     name: "Musée de la Porte du Non-Retour",
     category: "Site historique",
     location: "Ouidah",
-    description: 
+    description:
         "La Porte du Non-Retour est un monument emblématique situé à Ouidah, au Bénin. Elle a été construite en 1995 et représente le point final du parcours des esclaves, qui étaient contraints de quitter leur terre natale sans espoir de retour. L&apos;arche monumentale se dresse sur la plage où les navires négriers partaient vers les Amériques. Le site est un lieu de recueillement et de mémoire. Il est ouvert au public et symbolise le souvenir de l&apos;esclavage et la résistance du peuple africain. Bien que le site soit une structure en plein air et accessible en permanence, le Musée d&apos;Histoire de Ouidah (souvent visité en même temps) a des horaires précis.",
     price: "Accès libre avec des guides locaux",
     horaires: "Lundi - Dimanche : 9h00 - 18h00",
@@ -75,20 +75,20 @@ const proximites = [
 
 
 export default function SiteDetailPage() {
-   const [L, setL] = useState<typeof import("leaflet") | null>(null);
+    const [L, setL] = useState<typeof import("leaflet") | null>(null);
 
 
-  useEffect(() => {
-    (async () => {
-      const leaflet = await import("leaflet"); // import côté client
-      setL(leaflet);
-    })();
-  }, []);
+    useEffect(() => {
+        (async () => {
+            const leaflet = await import("leaflet"); // import côté client
+            setL(leaflet);
+        })();
+    }, []);
 
-  if (!L) return <p>Chargement de la carte...</p>;
+    if (!L) return <p>Chargement de la carte...</p>;
 
-  // Création d'une icône SVG personnalisée (pin) via divIcon
-    const  createPinIcon = (color = '#F97316') => {
+    // Création d'une icône SVG personnalisée (pin) via divIcon
+    const createPinIcon = (color = '#F97316') => {
         const svg = `
         <svg width="28" height="40" viewBox="0 0 24 36" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 0C7.03 0 3 4.03 3 9c0 6.33 7.78 15.52 8.25 16.03a1.5 1.5 0 0 0 2.5 0C13.22 24.52 21 15.33 21 9c0-4.97-4.03-9-9-9z" fill="${color}"/>
@@ -110,19 +110,29 @@ export default function SiteDetailPage() {
             <nav className="flex mb-3" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                     <li className="inline-flex items-center">
-                        <a href="#" className="inline-flex items-center text-sm font-medium text-accent hover:text-secondary dark:text-gray-400 dark:hover:text-white">
+                        <a href="/" className="inline-flex items-center text-sm font-medium text-accent hover:text-secondary dark:text-gray-400 dark:hover:text-white">
                             <svg className="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                             </svg>
                             Accueil
                         </a>
                     </li>
                     <li aria-current="page">
                         <div className="flex items-center">
-                            <svg className="rtl:rotate-180 w-3 h-3 text-accent mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                            <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                             </svg>
-                            <span className="ms-1 text-sm font-medium text-accent md:ms-2 dark:text-gray-400">Détail site touristique</span>
+                            <Link href="/sites" className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+                                Sites Touristiques
+                            </Link>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div className="flex items-center">
+                            <svg className="rtl:rotate-180 w-3 h-3 text-accent mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span className="ms-1 text-sm font-medium text-accent md:ms-2 dark:text-gray-400">Détail site </span>
                         </div>
                     </li>
                 </ol>
@@ -130,10 +140,16 @@ export default function SiteDetailPage() {
             <h1 className="text-2xl md:text-3xl font-bold text-brown-500">
                 Site “{site.name}”
             </h1>
-            <div className="flex items-center gap-4 text-base text-gray-500">
-                <span><span className="text-primary">Type de site</span> : <span className="text-accent">{site.category}</span></span>
-                <span>•</span>
-                <span><span className="text-primary">Localisation :</span> <span className="text-accent">{site.location}</span></span>
+            <div className="flex items-center flex-wrap gap-4 text-base text-gray-500">
+                <span>
+                    <span className="text-primary">Type de site</span> : 
+                    <span className="text-accent"> {site.category} </span>
+                </span>
+                <span className='hidden md:block'>•</span>
+                <span>
+                    <span className="text-primary">Localisation :</span> 
+                    <span className="text-accent"> {site.location} </span>
+                </span>
                 <span className="ml-auto flex gap-4 text-accent">
                     <button className="hover:underline">Partager</button>
                     <button className="hover:underline">Favoris</button>
@@ -142,31 +158,31 @@ export default function SiteDetailPage() {
 
             {/* Galerie */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
-               <Image
-    src={site.images[0]}
-    alt="textile made in Benin"
-    width={600}
-    height={400}
-    className="w-full h-80 object-cover rounded-xl md:col-span-2"
-    loading="lazy"
-  />
+                <Image
+                    src={site.images[0]}
+                    alt="textile made in Benin"
+                    width={600}
+                    height={400}
+                    className="w-full h-80 object-cover rounded-xl md:col-span-2"
+                    loading="lazy"
+                />
                 <div className="grid grid-cols-2 gap-4 px-4 place-items-end lg:border-l-[3px] lg:border-[#e7e6e6db]">
-                 <Image
-      src={site.images[1]}
-      alt="model made in Benin"
-      width={300}
-      height={200}
-      className="w-full h-36 object-cover rounded-xl"
-      loading="lazy"
-    />
-    <Image
-      src={site.images[2]}
-      alt="textile scene made in Benin"
-      width={300}
-      height={200}
-      className="w-full h-36 object-cover rounded-xl"
-      loading="lazy"
-    />
+                    <Image
+                        src={site.images[1]}
+                        alt="model made in Benin"
+                        width={300}
+                        height={200}
+                        className="w-full h-36 object-cover rounded-xl"
+                        loading="lazy"
+                    />
+                    <Image
+                        src={site.images[2]}
+                        alt="textile scene made in Benin"
+                        width={300}
+                        height={200}
+                        className="w-full h-36 object-cover rounded-xl"
+                        loading="lazy"
+                    />
 
                 </div>
                 <button className="absolute top-6 right-[15%] bg-brown-600 hover:bg-brown-700 text-white p-4 text-base rounded-xl ">
@@ -182,18 +198,18 @@ export default function SiteDetailPage() {
 
                     <h3 className="font-bold text-primary">Services proposés</h3>
                     <ul className="list-disc list-inside text-accent">
-                        <li><span className="font-semibold">Visites guidées</span> : Des guides locaux et des historiens sont souvent présents sur le site pour offrir 
+                        <li><span className="font-semibold">Visites guidées</span> : Des guides locaux et des historiens sont souvent présents sur le site pour offrir
                             des visites détaillées. Ils expliquent l&apos;histoire du lieu, la signification de la porte et le
-                             contexte de la traite négrière. Ce sont des services payants qui ne sont pas inclus dans 
-                             l&apos;accès au site.
+                            contexte de la traite négrière. Ce sont des services payants qui ne sont pas inclus dans
+                            l&apos;accès au site.
                         </li>
                         <li>
-                            <span className="font-semibold">Boutique d&apos;artisanat</span> : Autour du site et le long de la route des esclaves à Ouidah, vous trouverez 
+                            <span className="font-semibold">Boutique d&apos;artisanat</span> : Autour du site et le long de la route des esclaves à Ouidah, vous trouverez
                             des vendeurs et des petites boutiques qui proposent des souvenirs, des objets d&apos;artisanat local et
-                             d&apos;autres produits.
+                            d&apos;autres produits.
                         </li>
                         <li>
-                            <span className="font-semibold">Restauration</span> : Des stands de nourriture et de petites échoppes sont disponibles près de la plage pour 
+                            <span className="font-semibold">Restauration</span> : Des stands de nourriture et de petites échoppes sont disponibles près de la plage pour
                             acheter des rafraîchissements. Il n&apos;y a pas de restaurant sur le site même.
                         </li>
                     </ul>
@@ -216,11 +232,11 @@ export default function SiteDetailPage() {
                     <div className="mb-6 text-accent">
                         <div className="mb-2">
                             <p><strong className="text-brown-500">Contact :</strong></p>
-                            
+
                             <p className="mb-2">Whatsapp: {site.contact.whatsapp}</p>
-                            
+
                             <p className="mb-2">Téléphone: {site.contact.tel}</p>
-                            
+
                             <p className="mb-2">Email: {site.contact.email}</p>
                         </div>
                     </div>
@@ -274,7 +290,7 @@ export default function SiteDetailPage() {
                             className="border bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
                         >
                             <div className="relative h-48 w-full">
-                                <Image 
+                                <Image
                                     src={proximity_item.image}
                                     alt={proximity_item.title}
                                     fill

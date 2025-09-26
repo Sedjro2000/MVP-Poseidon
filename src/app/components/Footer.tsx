@@ -38,18 +38,18 @@ export default function Footer() {
         {/* Liens rapides */}
         <div>
           <h4 className="text-base font-semibold mb-4 text-white">Liens rapides</h4>
-          <ul className="space-y-3 text-white">
+          <ul className="space-y-3">
             <li>
-              <Link href="/" className="hover:underline">Accueil</Link>
+              <Link href="/" className="text-white hover:underline hover:text-white">Accueil</Link>
             </li>
             <li>
-              <Link href="/sites" className="hover:underline">Sites Touristiques</Link>
+              <Link href="/sites" className="text-white hover:underline hover:text-white">Sites Touristiques</Link>
             </li>
             <li>
-              <Link href="/boutiques" className="hover:underline">Boutiques artisanales</Link>
+              <Link href="/boutiques" className="text-white hover:underline hover:text-white">Boutiques artisanales</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:underline">À propos</Link>
+              <Link href="/about" className="text-white hover:underline hover:text-white">À propos</Link>
             </li>
           </ul>
         </div>
@@ -58,22 +58,22 @@ export default function Footer() {
       {/* Bottom section */}
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between border-t border-white">
         <div className="flex space-x-6 text-sm mb-4 md:mb-0">
-          <Link href="#" className="hover:underline">
+          <Link href="#" className="text-white hover:text-white hover:underline">
             Termes & Conditions
           </Link>
-          <Link href="#" className="hover:underline">
+          <Link href="#" className="text-white hover:text-white hover:underline">
             Politique de confidentialité
           </Link>
         </div>
 
         <div className="flex space-x-6 text-xl">
-          <a href="#" className="hover:text-neutral-200">
+          <a href="#" className="text-white hover:text-neutral-200">
             <FaFacebookF />
           </a>
-          <a href="#" className="hover:text-neutral-200">
+          <a href="#" className="text-white hover:text-neutral-200">
             <FaTwitter />
           </a>
-          <a href="#" className="hover:text-neutral-200">
+          <a href="#" className="text-white hover:text-neutral-200">
             <FaInstagram />
           </a>
         </div>

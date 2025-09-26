@@ -66,7 +66,14 @@ const SAMPLE_PLACES: Place[] = [
     title: 'Tata Somba',
     description: 'Habitations traditionnelles du peuple Somba, un site classé au patrimoine mondial de l\'UNESCO.',
   },
-
+  {
+    id: 's7',
+    lat: 6.3664,
+    lng: 2.4418,
+    type: 'site',
+    title: 'Place de l\'Amazone',
+    description: 'Une place emblématique à Cotonou, dominée par la statue monumentale de l\'Amazone, symbolisant la bravoure des femmes béninoises. C\'est un lieu de rassemblement, d\'expositions artistiques et de détente.',
+  },
  
   {
     id: 'b1',
@@ -136,39 +143,49 @@ export default function MapSection() {
         </p>
       </div>
 
-      {/* Barre de filtres */}
-      <div className="lg:absolute lg:-top-3 lg:left-1/2 lg:-translate-x-1/2 flex justify-center mb-6">
-        <div className="inline-flex items-center gap-3 bg-white rounded-full px-3 py-2 shadow-card border border-black/5">
+      <div className="container-sm flex justify-center mb-6 lg:absolute lg:-top-3 lg:left-1/2 lg:-translate-x-1/2">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 bg-white lg:rounded-full px-4 py-3 shadow-card border border-black/5 w-full max-w-md lg:max-w-none">
           
+          {/* Zone géographique */}
           <div className="flex items-center gap-3 px-2">
             <div className="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center shadow-sm">
-              
               <div className="w-6 h-6 rounded-full bg-neutral-100" />
             </div>
             <div className="text-left">
-              <div className="text-xs font-medium">zone géographique</div>
+              <div className="text-xs font-medium">Zone géographique</div>
               <div className="text-[12px] text-neutral-500">Choisissez la région</div>
             </div>
           </div>
 
-          {/* Filtre de site/boutique au clic */}
+          {/* Bouton Site touristique */}
           <button
-            onClick={() => setShowSites(s => !s)}
-            className={`flex items-center gap-3 px-3 py-2 rounded-full transition ${showSites ? 'bg-orange-50' : 'bg-transparent'}`}
+            onClick={() => setShowSites((s) => !s)}
+            className={`flex items-center gap-3 px-3 py-2 rounded-full transition w-full lg:w-auto ${
+              showSites ? "bg-orange-50" : "bg-transparent"
+            }`}
           >
             <div className="w-3 h-3 rounded-full bg-orange-500" />
             <div className="text-xs">Site touristique</div>
           </button>
 
+          {/* Bouton Artisanat */}
           <button
-            onClick={() => setShowBoutiques(s => !s)}
-            className={`flex items-center gap-3 px-3 py-2 rounded-full transition ${showBoutiques ? 'bg-amber-50' : 'bg-transparent'}`}
+            onClick={() => setShowBoutiques((s) => !s)}
+            className={`flex items-center gap-3 px-3 py-2 rounded-full transition w-full lg:w-auto ${
+              showBoutiques ? "bg-amber-50" : "bg-transparent"
+            }`}
           >
-            <div className="w-3 h-3 rounded-full" style={{backgroundColor: '#8B5E3C'}} />
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: "#8B5E3C" }}
+            />
             <div className="text-xs">Artisanat</div>
           </button>
 
-          <button className="ml-2 px-4 py-2 rounded-full bg-primary text-white text-sm">Filtrer</button>
+          {/* Bouton Filtrer */}
+          <button className="px-4 py-2 hidden lg:block rounded-full bg-primary text-white text-sm w-full lg:w-auto">
+            Filtrer
+          </button>
         </div>
       </div>
 
